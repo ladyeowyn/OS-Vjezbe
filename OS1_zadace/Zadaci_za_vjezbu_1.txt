@@ -42,8 +42,8 @@ mkdir vjezba4 && mkdir vjezba4/subfolder
 2. Unutar direktorija vjezba4 napravite datoteku prema nazivu varijable HOSTNAME
 cd vjezba4 && touch $HOSTNAME.txt
 3. Preimenujte novoizrađenu datoteku prema nazivu varijable USER
-mv LAPTOP-6S68AFD9.txt $(whoami).txt
+mv LAPTOP-6S68AFD9.txt $(whoami)
 4. Premjestite datoteku USER u direktorij subfolder
 mv kohut.txt subfolder
 5. Izbrišite datoteku USER koristeći apsolutnu putanju
-rm subfolder/kohut.txt
+rm subfolder/kohut
