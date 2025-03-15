@@ -47,3 +47,5 @@ mv LAPTOP-6S68AFD9.txt $(whoami)
 mv kohut.txt subfolder
 5. Izbrišite datoteku USER koristeći apsolutnu putanju
 rm subfolder/kohut
+
+Napomena: naknadno sam prebacila vjezba1-3 direktorije u OS1_zadace: mv vjezba1 OS1_zadace && mv vjezba2 OS1_zadace && mv vjezba3 OS1_zadace
