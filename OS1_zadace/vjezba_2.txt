@@ -1,0 +1,22 @@
+1. mkdir vjezba_2/data mkdir vjezba_2/backup
+cd vjezba_2/data
+touch script.js
+touch style.css
+touch .env
+echo 'console.log("Hello, World!")' > script.js
+echo 'body { background-color: #f0f0f0; }' > style.css
+echo 'VJEZBE=OS' > .env
+
+2. cp -r -v  data backup
+'data/.env' -> 'backup/data/.env'
+'data/style.css' -> 'backup/data/style.css'
+'data/script.js' -> 'backup/data/script.js'
+ls -la -t  ../backup
+
+3.  rm -vir data
+cp -r -i -v backup/data/* data
+ls -alt data
+
+4. ls -las
+ls -lhs
+ls -lart --color
