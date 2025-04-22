@@ -1,0 +1,116 @@
+Zadatak 1:
+
+touch z1.sh
+nano z1.sh
+
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+    echo "Moraju biti tocno dva argumenta."
+    exit 1
+fi
+
+direktorij="$1"
+ekstenzija="$2"
+nadjeno=0
+
+if [ ! -d "$direktorij" ]; then
+    echo "Prvi argument mora biti direktorij."
+    exit 1
+fi
+
+for file in "$direktorij"/*; do
+    if [ -f "$file" ] && [[ "$file" == *"$ekstenzija" ]]; then
+        basename "$file"  
+        nadjeno=1
+    fi
+done
+
+
+if [ "$nadjeno" -eq 0 ]; then
+    echo "Nisu nadjene datoteke sa $ekstenzija."
+fi
+
+
+Zadatak 2:
+
+touch z2.sh
+nano z2.sh
+
+#!/bin/bash
+
+
+if [ "$#" -ne 1 ]; then
+    echo "Potrebno je proslijediti točno 1 argument."
+    exit 1
+fi
+
+
+if ! [[ "$1" =~ ^[0-9]+$ ]]; then
+    echo "Argument mora biti broj."
+    exit 1
+fi
+
+if [ "$1" -lt 1 ] || [ "$1" -gt 10 ]; then
+    echo "Broj mora biti između 1 i 10."
+    exit 1
+fi
+
+
+> brojevi.txt 
+
+for ((i=1; i<=$1; i++)); do
+    echo "$i" >> brojevi.txt
+done
+
+echo "Datoteka brojevi.txt je stvorena sa brojevima od 1 do $1."
+
+
+Zadatak 3:
+
+touch z3.sh
+nano z3.sh
+
+#!/bin/bash
+
+
+dir="./screenshots"
+
+
+brojac=1
+
+
+for dat in "$dir"/*; do
+    if [ -f "$dat" ]; then
+        ime=$(basename "$file")  
+        novoime="screenshot_${brojac}_$ime"
+        mv "$ime" "$dir/$novoime"    
+        echo "$novoime"               
+        brojac=$((brojac + 1))       
+    fi
+done
+
+
+Zadatak 4:
+
+#!/bin/bash
+
+
+if [ "$#" -ne 1 ]; then
+    echo "Potrebno je proslijediti tocno jedan argument."
+    exit 1
+fi
+
+dir="$1"
+
+
+if [ ! -d "$dir" ]; then
+    echo "Direktorij '$dir' ne postoji u trenutnom direktoriju."
+    exit 1
+fi
+
+
+zip -j svi_zapisi.zip "$dir"/*
+
+echo "Datoteke iz direktorija '$dir' su uspjesno komprimirane u svi_zapisi.zip."
+
